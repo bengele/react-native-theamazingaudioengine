@@ -1,5 +1,7 @@
 # react-native-theamazingaudioengine
 
 
-    thanks for The Amazing Audio Engine https://github.com/TheAmazingAudioEngine/TheAmazingAudioEngine
+Thank for
+
+    thanks for TheAmazingAudioEngine https://github.com/TheAmazingAudioEngine/TheAmazingAudioEngine
     thanks for LAME
