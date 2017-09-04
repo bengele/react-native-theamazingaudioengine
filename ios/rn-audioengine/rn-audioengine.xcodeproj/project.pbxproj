@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B55D78CD1F5D6477007FAF30 /* libfaad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B55D78CB1F5D6477007FAF30 /* libfaad.a */; };
+		B55D78CE1F5D6477007FAF30 /* libmp4ff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B55D78CC1F5D6477007FAF30 /* libmp4ff.a */; };
 		B581033F1F551EBF008B9548 /* AudioEnginePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CB83031F515F06006CC8F9 /* AudioEnginePlugin.m */; };
 		B5C7B3271F5506FD0078D2D3 /* AEAudioBufferManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7B3111F5506FD0078D2D3 /* AEAudioBufferManager.m */; };
 		B5C7B3281F5506FD0078D2D3 /* AEAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7B3121F5506FD0078D2D3 /* AEAudioController.m */; };
@@ -69,6 +71,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B55D78CB1F5D6477007FAF30 /* libfaad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfaad.a; path = "fat-faad/lib/libfaad.a"; sourceTree = "<group>"; };
+		B55D78CC1F5D6477007FAF30 /* libmp4ff.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmp4ff.a; path = "fat-faad/lib/libmp4ff.a"; sourceTree = "<group>"; };
+		B55D78CF1F5D6481007FAF30 /* faad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = faad.h; path = "fat-faad/include/faad.h"; sourceTree = "<group>"; };
+		B55D78D01F5D6481007FAF30 /* mp4ff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mp4ff.h; path = "fat-faad/include/mp4ff.h"; sourceTree = "<group>"; };
+		B55D78D11F5D6481007FAF30 /* mp4ffint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mp4ffint.h; path = "fat-faad/include/mp4ffint.h"; sourceTree = "<group>"; };
+		B55D78D21F5D6481007FAF30 /* neaacdec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = neaacdec.h; path = "fat-faad/include/neaacdec.h"; sourceTree = "<group>"; };
 		B5C7B3111F5506FD0078D2D3 /* AEAudioBufferManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AEAudioBufferManager.m; path = TheAmazingAudioEngine/AEAudioBufferManager.m; sourceTree = "<group>"; };
 		B5C7B3121F5506FD0078D2D3 /* AEAudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AEAudioController.m; path = TheAmazingAudioEngine/AEAudioController.m; sourceTree = "<group>"; };
 		B5C7B3131F5506FD0078D2D3 /* AEAudioController+Audiobus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AEAudioController+Audiobus.m"; path = "TheAmazingAudioEngine/AEAudioController+Audiobus.m"; sourceTree = "<group>"; };
@@ -172,13 +180,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B55D78CE1F5D6477007FAF30 /* libmp4ff.a in Frameworks */,
 				B5CB83B21F516373006CC8F9 /* libmp3lame.a in Frameworks */,
+				B55D78CD1F5D6477007FAF30 /* libfaad.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B55D78C61F5D6440007FAF30 /* faad */ = {
+			isa = PBXGroup;
+			children = (
+				B55D78CA1F5D6468007FAF30 /* lib */,
+				B55D78C91F5D6461007FAF30 /* include */,
+			);
+			name = faad;
+			sourceTree = "<group>";
+		};
+		B55D78C91F5D6461007FAF30 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B55D78CF1F5D6481007FAF30 /* faad.h */,
+				B55D78D01F5D6481007FAF30 /* mp4ff.h */,
+				B55D78D11F5D6481007FAF30 /* mp4ffint.h */,
+				B55D78D21F5D6481007FAF30 /* neaacdec.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		B55D78CA1F5D6468007FAF30 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B55D78CB1F5D6477007FAF30 /* libfaad.a */,
+				B55D78CC1F5D6477007FAF30 /* libmp4ff.a */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
 		B5C7B33B1F5507250078D2D3 /* AESequencer */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +267,7 @@
 		B5CB82611F515401006CC8F9 = {
 			isa = PBXGroup;
 			children = (
+				B55D78C61F5D6440007FAF30 /* faad */,
 				B5CB83AA1F516316006CC8F9 /* lame */,
 				B5CB83061F515F2D006CC8F9 /* TheAmazingAudioEngine */,
 				B5CB826C1F515401006CC8F9 /* src */,
@@ -576,6 +616,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/fat-lame/lib",
 					"$(PROJECT_DIR)/TheAmazingAudioEngine",
+					"$(PROJECT_DIR)/fat-faad/lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -590,6 +631,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/fat-lame/lib",
 					"$(PROJECT_DIR)/TheAmazingAudioEngine",
+					"$(PROJECT_DIR)/fat-faad/lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
